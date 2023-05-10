@@ -33,7 +33,6 @@ public class FirstTest extends BaseTest {
 			elements = driver.findElements(By.xpath("//*[starts-with(text(),\"Broker\") and starts-with(@title,\"Broker\")]"));
 		} catch (NoSuchElementException e) {
 			System.out.println("Element not found: ");
-			System.out.println("Element not found: ");
 			
 		}
 		for (WebElement element : elements) {
