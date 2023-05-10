@@ -33,13 +33,11 @@ public class FirstTest extends BaseTest {
 			elements = driver.findElements(By.xpath("//*[starts-with(text(),\"Broker\") and starts-with(@title,\"Broker\")]"));
 		} catch (NoSuchElementException e) {
 			System.out.println("Element not found: ");
-			// continue with the script
+			System.out.println("Element not found: ");
+			
 		}
-		// Loop through the elements and perform actions on each one
 		for (WebElement element : elements) {
 			
-			//JavascriptExecutor js = (JavascriptExecutor) driver;
-			//js.executeScript("arguments[0].scrollIntoView(true);", element);
 			try {
 				element.click();
 				searchblank=driver.findElement(By.xpath("//input[@placeholder=' ']"));
