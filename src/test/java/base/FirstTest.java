@@ -20,43 +20,36 @@ public class FirstTest extends BaseTest {
 		WebElement group_add = driver.findElement(By.xpath("//div[@aria-label='New group']"));
 		group_add.click();
 		Thread.sleep(2000);
-		WebElement search=driver.findElement(By.xpath("//input[@placeholder='Type contact name']"));
+		WebElement search = driver.findElement(By.xpath("//input[@placeholder='Type contact name']"));
 		search.sendKeys("Broker");
-		
+
 		Thread.sleep(5000);
 		WebElement searchblank;
 		List<WebElement> elements = null;
 
 		// First, locate all the elements that you want to handle
 		try {
-			
-			elements = driver.findElements(By.xpath("//*[starts-with(text(),\"Broker\") and starts-with(@title,\"Broker\")]"));
+
+			elements = driver
+					.findElements(By.xpath("//*[starts-with(text(),\"Broker\") and starts-with(@title,\"Broker\")]"));
 		} catch (NoSuchElementException e) {
 			System.out.println("Element not found: ");
-			
+
 		}
 		for (WebElement element : elements) {
-			
+
 			try {
 				element.click();
-				searchblank=driver.findElement(By.xpath("//input[@placeholder=' ']"));
+				searchblank = driver.findElement(By.xpath("//input[@placeholder=' ']"));
 				searchblank.sendKeys("Broker");
-				elements = driver.findElements(By.xpath("//*[starts-with(text(),\"Broker\") and starts-with(@title,\"Broker\")]"));
+				elements = driver.findElements(
+						By.xpath("//*[starts-with(text(),\"Broker\") and starts-with(@title,\"Broker\")]"));
 				Thread.sleep(1000);
 			} catch (ElementClickInterceptedException e) {
 				System.out.println("Element click nai hua: ");
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		Thread.sleep(5000);
 		WebElement back_btn = driver.findElement(By.xpath("//div[@aria-label='Back']//span[@data-testid='back']"));
 		back_btn.click();
